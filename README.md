@@ -31,6 +31,4 @@ esc = quit. - p.s. don't use the close icon on the window to quit - it sometimes
  - *the /retropod/Source Code directory* contains all the source you need to compile on other platforms (please let me know if you do this i'd love to see it runing under mac/linux :)
 
 
-
-
 © 2020 GitHub, Inc.
