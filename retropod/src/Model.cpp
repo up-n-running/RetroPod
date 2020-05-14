@@ -1,4 +1,12 @@
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#include <stdlib.h>  // exit()
+#include <unistd.h>  // close(), write()
+#else
 #include <GL/glut.h>
+#endif
+
+
 #include <stdio.h>
 #include <math.h>
 #include <string.h>
@@ -644,7 +652,7 @@ void Model::printGameOverMessage() {
   glRasterPos2i( 3, 6 );
   showText( GLUT_BITMAP_HELVETICA_18, message );
   glRasterPos2i( 3, 4 );
-  showText( GLUT_BITMAP_HELVETICA_18, "Now Press Esc To Quit Demo." );
+  showText( GLUT_BITMAP_HELVETICA_18, (char *)("Now Press Esc To Quit Demo.") );
 
 }
 

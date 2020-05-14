@@ -19,7 +19,7 @@
 // Misc. Constants
 //------------------------------------------------------------------------//
 
-float	const	pi	= 3.14159265f;
+float	const	piConst	= 3.14159265f; //defined in carbon
 float	const	g	= -32.174f;		// acceleration due to gravity, ft/s^2
 float	const	rho = 0.0023769f;	// desity of air at sea level, slugs/ft^3
 float	const	tol = 0.0001f;		// float type tolerance 
@@ -33,12 +33,12 @@ inline	float	RadiansToDegrees(float rad);
 
 inline	float	DegreesToRadians(float deg)
 {
-	return deg * pi / 180.0f;
+	return deg * piConst / 180.0f;
 }
 
 inline	float	RadiansToDegrees(float rad)
 {	
-	return rad * 180.0f / pi;
+	return rad * 180.0f / piConst;
 }
 
 //------------------------------------------------------------------------//
@@ -714,7 +714,7 @@ inline	Vector	MakeEulerAnglesFromQ(Quaternion q)
 		r13 = 2 * (q.v.x*q.v.z + q.n*q.v.y);
 
 		u.x = RadiansToDegrees(0.0f); //roll
-		u.y = RadiansToDegrees((float) (-(pi/2) * r31/tmp)); // pitch
+		u.y = RadiansToDegrees((float) (-(piConst/2) * r31/tmp)); // pitch
 		u.z = RadiansToDegrees((float) atan2(-r12, -r31*r13)); // yaw
 		return u;
 	}

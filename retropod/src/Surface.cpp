@@ -1,5 +1,13 @@
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#include <stdlib.h>  // exit()
+#include <unistd.h>  // close(), write()
+#else
 #include <windows.h>
 #include <GL/glut.h>
+#endif
+
+
 #include <stdio.h>
 #include <math.h>
 

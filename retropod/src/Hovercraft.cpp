@@ -1,11 +1,19 @@
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#include <stdlib.h>  // exit()
+#include <unistd.h>  // close(), write()
+#include <Carbon/Carbon.h>
+#else
 #include <windows.h>
 #include <GL/glut.h>
+#endif
+
 #include <stdio.h>
 #include <math.h>
 
 #include "Hovercraft.h"
 
-#define PI 3.1415926535897
+// #define PI 3.1415926535897 //defined in carbon
 
 #define unitXVec Vector(1.0f, 0.0f, 0.0f)
 #define unitYVec Vector(0.0f, 1.0f, 0.0f)
@@ -220,21 +228,24 @@ float Hovercraft::getFanLocalYDistFromMiddle() {
 }
 
 float Hovercraft::getLeftFanForceMagnitude() {
-  ///MAKE THESE NOT BOLOX
-	if ( IsKeyDown(VK_UP) || IsKeyDown(VK_RIGHT)){
+        //VK_UP is Windows and kVK_UpArrow is mac so this is a bit of a hack but there's no platform 
+        //independent implementation of 'is a key pressed' which is madness!
+	if ( IsKeyDown(VK_UP) || IsKeyDown(VK_RIGHT) || IsKeyDown(kVK_UpArrow) || IsKeyDown(kVK_RightArrow) ){
 		return fanForwardForce;
 	}
-	if ( IsKeyDown(VK_DOWN) ){
+	if ( IsKeyDown(VK_DOWN) || IsKeyDown(kVK_DownArrow) ){
 		return -fanBackwardForce;
 	}
 	return 0.0f;
 }
 
 float Hovercraft::getRightFanForceMagnitude() {
-	if ( IsKeyDown(VK_UP) || IsKeyDown(VK_LEFT)){
+        //VK_UP is Windows and kVK_UpArrow is mac so this is a bit of a hack but there's no platform 
+        //independent implementation of 'is a key pressed' which is madness!
+	if ( IsKeyDown(VK_UP) || IsKeyDown(VK_LEFT) || IsKeyDown(kVK_UpArrow) || IsKeyDown(kVK_LeftArrow)){
 		return fanForwardForce;
 	}
-	if ( IsKeyDown(VK_DOWN) ){
+	if ( IsKeyDown(VK_DOWN) || IsKeyDown(kVK_DownArrow) ){
 		return -fanBackwardForce;
 	}
 	return 0.0f;
@@ -354,7 +365,7 @@ void Hovercraft::draw(void) {
 
 
 /*
-  //**************************TESTING JET VECTORS*****************
+  // **************************TESTING JET VECTORS*****************
 	//fetch unit jet vector
 	float jetUnitVec[3];
 	getUnitJetVector(jetUnitVec);
@@ -363,7 +374,7 @@ void Hovercraft::draw(void) {
 	for (int jetRow=0; jetRow<jetRows; jetRow++) {
 		for (int jetCol=0; jetCol<jetCols; jetCol++) {
 
-			//****FOR EACH JET FORCE****
+			// ****FOR EACH JET FORCE****
 			//fetch jet position
 			float jetPos[3];
 			getJetPosition(jetPos, jetCol, jetRow);
@@ -374,7 +385,7 @@ void Hovercraft::draw(void) {
 			glEnd();
 		}
 	}
-  //*****************END TESTING***************************
+  // *****************END TESTING***************************
 */
   glTranslatef(displacement.x, displacement.y, displacement.z);
 
@@ -422,17 +433,45 @@ void Hovercraft::draw(void) {
 }
 
 //**************************************PRIVATE FUNCTIONS***********************************
-bool Hovercraft::IsKeyDown(short KeyCode) {
-
+/* UNCOMMENT TO COMPILE ON WINDOWS
+ * bool Hovercraft::IsKeyDown(short KeyCode) {
 	SHORT	retval;
-
 	retval = GetAsyncKeyState(KeyCode);
-
 	if (HIBYTE(retval))
 		return true;
-
 	return false;
 }
+ */
+
+
+/* UNCOMMENT TO COMPILE ON MAC */    
+bool Hovercraft::IsKeyDown( short KeyCode ) 
+{ 
+    unsigned short inKeyCode = KeyCode;
+    unsigned char keyMap[16]; 
+    GetKeys((BigEndianUInt32*) &keyMap);
+    
+    //const char* t = reinterpret_cast<const char *>( keyMap[ inKeyCode >> 3] );
+    
+    //printf(t);
+    return (bool)((0 != ((keyMap[ inKeyCode >> 3] >> (inKeyCode & 7)) & 1))); 
+}    
+   /* 
+uint16_t vKey = kVK_LeftArrow;
+uint8_t index = (vKey - 1) / 32;
+uint8_t shift = ((vKey - 1) % 32);
+KeyMap keyStates;
+GetKeys((BigEndianUInt32*)keyStates);
+if (keyStates[index] & (BigEndianUInt32)(1 << shift))
+{
+    // left arrow key is down
+}
+
+}
+*/
+
+
+
 
 void Hovercraft::glJohnSolidCuboid(float wid, float len, float hei) {
 

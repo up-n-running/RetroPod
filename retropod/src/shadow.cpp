@@ -1,7 +1,13 @@
+#ifdef __APPLE__
+#include <stdlib.h>  // exit()
+#include <unistd.h>  // close(), write()
+#else
+#endif
+
 #include <stdio.h>
 #include <math.h>
 
-#include "Surface.h"
+#include "Shadow.h"
 
 
 /*******************************************************************\
@@ -63,76 +69,6 @@
 *
 *
 \*******************************************************************/
-
-
-
-
-
-
-
-
-
-class Node  
-{
-
-public:
-
-  //variables
-	float x;
-	float y;
-	bool  firstNode;
-	bool  hasBeenVisited;
-  bool  inside;
-	Node *next;
-
-  //functions
-	Node(float xVal, float yVal);
-	~Node();
-  static int getNoOfNodes();
-
-private:
-
-  //variables
-  static int NoOfNodes;
-
-};
-
-//initialise our static Node count;
-int Node::NoOfNodes=0;
-
-
-
-//**********Construction/Destruction*********
-
-
-Node::Node(float xVal, float yVal)
-{
-	x=xVal;
-	y=yVal;
-  firstNode=false;
-	hasBeenVisited=false;
-  inside=false;
-	next=0;
-
-  NoOfNodes++;
-
-};
-
-Node::~Node()
-{
-  NoOfNodes--;
-}
-
-
-//************Static Member Function***************
-int Node::getNoOfNodes() {
-  return NoOfNodes;
-}
-
-
-
-
-
 
 
 

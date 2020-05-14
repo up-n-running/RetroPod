@@ -1,5 +1,10 @@
 #include "physicsmaths.h"
+
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
 #include <GL/glut.h>
+#endif
 
 /***************************************************************************\
 *A surface is simply stored as a 2-dimensional array called pointY (actually, an array of arrays of floats).
@@ -40,15 +45,15 @@ private:
 
 public:
 
-	Surface(void);
-	Surface(const int listNo,const int xPoints,const int zPoints);
-  Surface(const int listNo, FILE** filePointerPointer);
-	~Surface(void);
+    Surface(void);
+    Surface(const int listNo,const int xPoints,const int zPoints);
+    Surface(const int listNo, FILE** filePointerPointer);
+    ~Surface(void);
 
   inline float getXLength(void);
   inline float getZLength(void);
-  inline int   getNoOfCols(void);
-  inline int   getNoOfRows(void);
+  int   getNoOfCols(void);
+  int   getNoOfRows(void);
 
   float getHeightAt(float xPos, float zPos);
   inline float getHeightAtIntUnsafe(int col, int row);
@@ -72,7 +77,7 @@ private:
 /******************************************\
 *This function is an unintelligent version of 'getHeightAt'. it is simply used to
 *access elements of the 2d pointY array. because speed is of the essence here, it's inlined
-*and IT HAS NO SANITY CHECKING ON THE PARAMETERS and theferore could easily crash is abused.
+*and IT HAS NO SANITY CHECKING ON THE PARAMETERS and theferore could easily crash if abused.
 \******************************************/
 inline float Surface::getHeightAtIntUnsafe(int col, int row) {
   return pointY[col][row];

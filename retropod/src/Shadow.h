@@ -1,4 +1,6 @@
 #include "Node.h"
+#include "Surface.h"
+
   ///THIS FILE IS ALL BOLOX, 
 class Shadow {
 
@@ -22,5 +24,7 @@ private:
   void findEquationForLine (float x1, float y1, float x2, float y2, float* m, float* c, bool *inversed);
   void initShadowLinkedList (int colNo, int rowNo, bool topLeft, Node **nThisPointer, Node **nLastPointer);
   void finishShadowLinkedList (Node *nThis, Node* nLast, Surface *mySurface, bool drawIt);
+  
+  
 
 };

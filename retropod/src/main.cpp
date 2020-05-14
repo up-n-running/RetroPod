@@ -1,6 +1,18 @@
+#ifdef __APPLE__
+#include <GLUT/glut.h>
+#else
 #include <windows.h>
 #include <GL/glut.h>
+#endif
+
+
 #include <stdio.h>
+#include <string.h>
+
+//added these 2 to get it working on mac!
+#include <stdlib.h> 
+#include <unistd.h> 
+
 
 #include "Model.h"
 
@@ -125,8 +137,8 @@ void keyboard ( unsigned char key, int x, int y )
          glutReshapeWindow ( 600, 600 );
          break;
       case 'p':
-		     paused=!paused;
-		     break;
+         paused=!paused;
+         break;
       default:
          break;
    }
