@@ -391,7 +391,7 @@ void Hovercraft::draw(void) {
 
   //put this line back up to the top*****************************
 
-
+  /* Used for testing only
   //find orientation of rod and draw it
   Vector down(0.0, -1.0, 0.0);
   Vector fish=QVRotate(orientation, down);
@@ -399,7 +399,8 @@ void Hovercraft::draw(void) {
 	glVertex3f(0.0f, 0.0f, 0.0f);
 	glVertex3f(10*fish.x, 10*fish.y, 10*fish.z);
   glEnd();
-
+  */
+    
   //do rotation
   Vector axis=QGetAxis(orientation);
   glRotatef(RadiansToDegrees(QGetAngle(orientation)), axis.x, axis.y, axis.z);
