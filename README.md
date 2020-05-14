@@ -2,7 +2,7 @@
 A C++ / OpenGL 3D Hovercraft Simulator type Game with retro graphics and some mind-melting maths behind the scenes that's actually really quite fun to say i wrote it fresh out of uni back in 2002.\
 I seem to remember having dial-up internet at the time and using notepad.exe on windows as my text editor to write my code!!!!
 
-![Screenshot of actual retropod gameplay](/relative/path/to/img.jpg?raw=true "Retropod Screenshot")
+![Screenshot of actual retropod gameplay](/screenshots/mac-screenshot-1.png?raw=true "Mac Retropod Screenshot 1")
 
 # Installation Instructions (Windows):
 Just download the contents of the dist_win directory (all 8 files) and double click RetroPod.exe to play the game\
