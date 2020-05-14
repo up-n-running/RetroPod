@@ -3,8 +3,11 @@ A C++ / OpenGL 3D Hovercraft Simulator type Game with retro graphics and some mi
 I seem to remember having dial-up internet at the time and using notepad.exe on windows as my text editor to write my code!!!!
 
 # Screenshots:
-*Mac Screenshots 1 | Mac Screenshot 2 | Windows Screenshot*\
-<img src="https://github.com/up-n-running/RetroPod/blob/master/screenshots/mac-screenshot-1.png" height="300"><img src="https://github.com/up-n-running/RetroPod/blob/master/screenshots/mac-screenshot-2.png" height="300"> <img src="https://github.com/up-n-running/RetroPod/blob/master/screenshots/windows-screenshot.PNG" height="300">
+**Mac Screenshots 1 | Mac Screenshot 2**\
+<img src="https://github.com/up-n-running/RetroPod/blob/master/screenshots/mac-screenshot-1.png" height="300">    <img src="https://github.com/up-n-running/RetroPod/blob/master/screenshots/mac-screenshot-2.png" height="300">\
+\
+**Windows Screenshot**\
+<img src="https://github.com/up-n-running/RetroPod/blob/master/screenshots/windows-screenshot.PNG" height="300">
 
 # Installation Instructions (Windows):
 Just download the contents of the dist_win directory (all 8 files) and double click RetroPod.exe to play the game\
