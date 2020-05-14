@@ -2,18 +2,18 @@
 A C++ / OpenGL 3D Hovercraft Simulator type Game with retro graphics and some mind-melting maths behind the scenes that's actually really quite fun to say i wrote it fresh out of uni back in 2002.\
 I seem to remember having dial-up internet at the time and using notepad.exe on windows as my text editor to write my code!!!!
 
-# Screenshots:
+# Screenshots
 **Mac Screenshot 1               Mac Screenshot 2**\
 <img src="https://github.com/up-n-running/RetroPod/blob/master/screenshots/mac-screenshot-1.png" height="300">    <img src="https://github.com/up-n-running/RetroPod/blob/master/screenshots/mac-screenshot-2.png" height="300">\
 \
 **Windows Screenshot**\
 <img src="https://github.com/up-n-running/RetroPod/blob/master/screenshots/windows-screenshot.PNG" height="300">
 
-# Installation Instructions (Windows):
+# Installation Instructions (Windows)
 Just download the contents of the dist_win directory (all 8 files) and double click RetroPod.exe to play the game\
 If you get stuck see instructions.txt file in the dist_win directory.
 
-# Installation for Mac:
+# Installation for Mac
 Just download the contents of the dist_mac directory (all 7 files). Don't double click RetroPod executable, instead 'cd' to it in the terminal then run from terminal: ./RetroPod\
 If you get stuck see instructions.txt file in the dist_win directory.
 
@@ -21,14 +21,14 @@ If you get stuck see instructions.txt file in the dist_win directory.
 Once in the main game, here are the keys:\
 \
 Arrow keys to move around:\
-UP - both fans forward.\
-Left / Right - one fan forward, one fan back.\
-Back - both fans back\
+**Up** - both fans forward.\
+**Left** / **Right** - one fan forward, one fan reverse to turn\
+**Back** - both fans back\
 \
-f = full screen\
-w = windowed (not full screen)\
-p = pause/unpause\
-esc = quit\
+**f** = full screen\
+**w** = windowed (not full screen)\
+**p** = pause/unpause\
+**esc** = quit\
 NOTE: On Windows please press 'esc' and not close icon on the window to quit - it sometimes doesn't shut the process down properly - i'm fairly sure this is a problem with the glut32.dll file.
 
 # What Files are included:
