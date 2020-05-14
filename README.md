@@ -3,7 +3,7 @@ A C++ / OpenGL 3D Hovercraft Simulator type Game with retro graphics and some mi
 I seem to remember having dial-up internet at the time and using notepad.exe on windows as my text editor to write my code!!!!
 
 # Screenshots:
-**Mac Screenshot 1                Mac Screenshot 2**\
+**Mac Screenshot 1               Mac Screenshot 2**\
 <img src="https://github.com/up-n-running/RetroPod/blob/master/screenshots/mac-screenshot-1.png" height="300">    <img src="https://github.com/up-n-running/RetroPod/blob/master/screenshots/mac-screenshot-2.png" height="300">\
 \
 **Windows Screenshot**\
