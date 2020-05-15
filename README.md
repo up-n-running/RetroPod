@@ -31,7 +31,7 @@ Arrow keys to move around:\
 **esc** = quit\
 NOTE: On Windows please press 'esc' and not close icon on the window to quit - it sometimes doesn't shut the process down properly - i'm fairly sure this is a problem with the glut32.dll file.
 
-#If you want to compile the source:
+# If you want to compile the source:
 ** You do not need to do this to run the game, only if you want to develop on it **
 Ive included the source files and a shell script for compiling on mac. Just open terminal, cd to it and run it.
 To compile on windows you have to set up a few things first (that's windows!) so open the compilation_windows directory, open the readme and follow the instructions ive included eveything you need it's not as hard as yu might think!
