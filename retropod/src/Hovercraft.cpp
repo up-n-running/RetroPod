@@ -3,9 +3,11 @@
 #include <stdlib.h>  // exit()
 #include <unistd.h>  // close(), write()
 #include <Carbon/Carbon.h>
+#include "DummyMacVirtualKeys.h"
 #else
 #include <windows.h>
 #include <GL/glut.h>
+#include "DummyMacVirtualKeys.h"
 #endif
 
 #include <stdio.h>
@@ -18,12 +20,6 @@
 #define unitXVec Vector(1.0f, 0.0f, 0.0f)
 #define unitYVec Vector(0.0f, 1.0f, 0.0f)
 #define unitZVec Vector(0.0f, 0.0f, 1.0f)
-
-//virtual keys
-#define VK_LEFT           0x25
-#define VK_UP             0x26
-#define VK_RIGHT          0x27
-#define VK_DOWN           0x28
 
 //--------------------CONSTRUCTORS / DESTRUCTORS------------------------
 Hovercraft::Hovercraft(void) {
@@ -434,41 +430,28 @@ void Hovercraft::draw(void) {
 }
 
 //**************************************PRIVATE FUNCTIONS***********************************
-/* UNCOMMENT TO COMPILE ON WINDOWS
- * bool Hovercraft::IsKeyDown(short KeyCode) {
+/* UNCOMMENT TO COMPILE ON WINDOWS */
+
+bool Hovercraft::IsKeyDown(short KeyCode) {
 	SHORT	retval;
 	retval = GetAsyncKeyState(KeyCode);
 	if (HIBYTE(retval))
 		return true;
 	return false;
 }
- */
 
 
-/* UNCOMMENT TO COMPILE ON MAC */    
+
+/* UNCOMMENT TO COMPILE ON MAC */
+/*    
 bool Hovercraft::IsKeyDown( short KeyCode ) 
 { 
     unsigned short inKeyCode = KeyCode;
     unsigned char keyMap[16]; 
     GetKeys((BigEndianUInt32*) &keyMap);
     
-    //const char* t = reinterpret_cast<const char *>( keyMap[ inKeyCode >> 3] );
-    
-    //printf(t);
     return (bool)((0 != ((keyMap[ inKeyCode >> 3] >> (inKeyCode & 7)) & 1))); 
 }    
-   /* 
-uint16_t vKey = kVK_LeftArrow;
-uint8_t index = (vKey - 1) / 32;
-uint8_t shift = ((vKey - 1) % 32);
-KeyMap keyStates;
-GetKeys((BigEndianUInt32*)keyStates);
-if (keyStates[index] & (BigEndianUInt32)(1 << shift))
-{
-    // left arrow key is down
-}
-
-}
 */
 
 

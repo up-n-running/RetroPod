@@ -26,21 +26,6 @@ int winHeight=600;  //in case any external classes need to know.
 
 void init ( void )
 {
-
-   //SETUP OPENGL PARAMATERS 
-   glEnable     ( GL_DEPTH_TEST );
-   glClearColor ( 0.0f, 0.0f, 0.0f, 0.0f );
-
-   //SETUP OPENGL LIGHTING
-   GLfloat lightPosition []={-35.0f, 75.0f, -100.0f, 0.0f};  //ininitely far away
-   GLfloat lightAmbience []={0.05f, 0.05f, 0.05f, 1.0f};
-   GLfloat lightDiffusion[]={0.95f, 0.95f, 0.95f, 1.0f};
-   glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
-   glLightfv(GL_LIGHT0, GL_AMBIENT, lightAmbience);
-   glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDiffusion);
-   glEnable(GL_LIGHTING);
-   glEnable(GL_LIGHT0);
-   glEnable(GL_LEQUAL);
    
    //PRINT LEVEL SELECT TEXT
    printf("Please Select The Level Appropriate To Your Computer Speed...\n\n"); 
@@ -90,8 +75,25 @@ void init ( void )
 
    //CREATE GAME MODEL
    printf("Loading Level, Please Wait.....\n");
-   myModel = new Model(fileName);
 
+
+   //SETUP OPENGL PARAMATERS 
+   glutCreateWindow    ( "Retro Pod" );
+   glEnable     ( GL_DEPTH_TEST );
+   glClearColor ( 0.0f, 0.0f, 0.0f, 0.0f );
+
+   //SETUP OPENGL LIGHTING
+   GLfloat lightPosition []={-35.0f, 75.0f, -100.0f, 0.0f};  //ininitely far away
+   GLfloat lightAmbience []={0.05f, 0.05f, 0.05f, 1.0f};
+   GLfloat lightDiffusion[]={0.95f, 0.95f, 0.95f, 1.0f};
+   glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
+   glLightfv(GL_LIGHT0, GL_AMBIENT, lightAmbience);
+   glLightfv(GL_LIGHT0, GL_DIFFUSE, lightDiffusion);
+   glEnable(GL_LIGHTING);
+   glEnable(GL_LIGHT0);
+   glEnable(GL_LEQUAL);
+
+   myModel = new Model(fileName);
 }
 
 
@@ -157,8 +159,7 @@ int main ( int argc, char** argv )
    glutInit ( &argc, argv );
    glutInitDisplayMode ( GLUT_RGB | GLUT_DOUBLE );
    glutInitWindowSize  ( 600, 600 );
-   glutCreateWindow    ( "Retro Pod" );
-   init ( );
+   init                ( );
    glutReshapeFunc     ( reshape  );
    glutKeyboardFunc    ( keyboard );
    glutDisplayFunc     ( display  );
