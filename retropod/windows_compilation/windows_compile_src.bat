@@ -1,0 +1,1 @@
+g++ -o ../dist_win/RetroPod.exe ../src/surface.cpp ../src/shadow.cpp ../src/Node.cpp ../src/Model.cpp ../src/Hovercraft.cpp ../src/Checkpoint.cpp -I"C:\Program Files\Common Files\MinGW\freeglut\include" -L"C:\Program Files\Common Files\MinGW\freeglut\lib" ../src/Main.cpp -lfreeglut -lglu32 -lopengl32 -D GL_SILENCE_DEPRECATION
