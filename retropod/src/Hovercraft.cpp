@@ -3,8 +3,8 @@
 #include <stdlib.h>  // exit()
 #include <unistd.h>  // close(), write()
 #include <Carbon/Carbon.h>
-#include "DummyMacVirtualKeys.h"
-#else
+#include "DummyWinVirtualKeys.h"
+#els
 #include <windows.h>
 #include <GL/glut.h>
 #include "DummyMacVirtualKeys.h"
