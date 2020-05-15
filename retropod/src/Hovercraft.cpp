@@ -4,7 +4,7 @@
 #include <unistd.h>  // close(), write()
 #include <Carbon/Carbon.h>
 #include "DummyWinVirtualKeys.h"
-#els
+#else
 #include <windows.h>
 #include <GL/glut.h>
 #include "DummyMacVirtualKeys.h"
@@ -431,7 +431,7 @@ void Hovercraft::draw(void) {
 
 //**************************************PRIVATE FUNCTIONS***********************************
 /* UNCOMMENT TO COMPILE ON WINDOWS */
-
+/*
 bool Hovercraft::IsKeyDown(short KeyCode) {
 	SHORT	retval;
 	retval = GetAsyncKeyState(KeyCode);
@@ -439,11 +439,11 @@ bool Hovercraft::IsKeyDown(short KeyCode) {
 		return true;
 	return false;
 }
+*/
 
 
 
-/* UNCOMMENT TO COMPILE ON MAC */
-/*    
+/* UNCOMMENT TO COMPILE ON MAC */  
 bool Hovercraft::IsKeyDown( short KeyCode ) 
 { 
     unsigned short inKeyCode = KeyCode;
@@ -452,7 +452,6 @@ bool Hovercraft::IsKeyDown( short KeyCode )
     
     return (bool)((0 != ((keyMap[ inKeyCode >> 3] >> (inKeyCode & 7)) & 1))); 
 }    
-*/
 
 
 
