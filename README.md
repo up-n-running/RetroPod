@@ -1,6 +1,6 @@
 # RetroPod
 A C++ / OpenGL 3D Hovercraft Simulator type Game with retro graphics and some mind-melting maths behind the scenes. It's actually really playable to say i wrote it fresh out of uni back in 2002.\
-I seem to remember having dial-up internet at the time and using notepad.exe on windows as my text editor to write all the code!
+I seem to remember having dial-up internet at the time and using notepad.exe on windows as my text editor to write all the code! I didn't use a game engine. I wrote all the physics, the collision detection, etc from scratch in notepad.
 
 # Screenshots
 **Mac Screenshot 1               Mac Screenshot 2**\
