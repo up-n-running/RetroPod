@@ -21,4 +21,4 @@ w = not full screen
 p = pause/unpause
 esc = quit
 
-NOTE: Always use don't use the close icon on the window to quit - it sometimes doesn't shut the process down properly - i'm fairly sure this is a problem with the glut32.dll file on windows!
+NOTE: Always use the esc key to quit. Don't use the close icon on the window - it sometimes doesn't shut the process down properly - i'm fairly sure this is a problem with the glut32.dll file on windows and not something i have any control over :(
