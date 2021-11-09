@@ -15,7 +15,7 @@ If you get stuck see instructions.txt file in the dist_win directory.
 
 # Installation for Mac
 Just download the contents of the dist_mac directory (all 7 files). Don't double click RetroPod executable, instead 'cd' to it in the terminal then run from terminal: ./RetroPod\
-If you get stuck see instructions.txt file in the dist_win directory.
+If you get stuck see instructions.txt file in the dist_mac directory.
 
 # To play the game
 Once in the main game, here are the keys:\
